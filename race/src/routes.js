@@ -1,16 +1,15 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import Header from './components/header';
 import JogsPage from './components/jogs-page';
 import InfoPage from './components/info-page';
 import ContactUs from './components/contact-us';
 import AuthPage from './components/auth-page';
+import JogsCreatePage from './components/jogs-create-page/jogs-create-page';
 
 export const useRoutes = isAuthenticated => {
     if (isAuthenticated) {
         return (
             <Switch>
-                <Header></Header>
                 <Route path="/jogs">
                     <JogsPage />
                 </Route>
@@ -20,7 +19,10 @@ export const useRoutes = isAuthenticated => {
                 <Route path="/contacts">
                     <ContactUs />
                 </Route>
-                <Redirect to="/info" />
+                <Route path="/jog-create-page">
+                    <JogsCreatePage />
+                </Route>
+                <Redirect to="/jogs" />
             </Switch>
         )
     }
@@ -28,7 +30,6 @@ export const useRoutes = isAuthenticated => {
     return (
         <Switch>
             <Route path="/" exact>
-                <Header></Header>
                 <AuthPage />
             </Route>
             <Redirect to="/" />
