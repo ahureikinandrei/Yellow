@@ -1,0 +1,9 @@
+.jog-info {
+    display: flex;
+}
+
+.jog-info__data {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
