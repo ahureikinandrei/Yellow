@@ -1,11 +1,93 @@
 .jops-page {
+    position: relative;
     display: flex;
     flex-grow: 1;
     flex-direction: column;
     align-items: center;
-    overflow: scroll;
+    overflow-y: scroll;
+    gap: 80px;
+    padding-top: 100px;
 }
 
 .jops-page__content {
     margin-top: 20%;
+}
+
+.jops-page_add-btn {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+}
+
+.jops-page__empty-container {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: SFUIText, sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.21;
+    letter-spacing: normal;
+    text-align: center;
+    color: #b0b0b0;
+    height: 100%;
+}
+
+.jops-page__add-btn_empty {
+    margin-top: 140px;
+    color:#e990f9;
+    font-family: SFUIText, sans-serif;
+    padding: 20px 33px;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 36px;
+    border: solid 3px #e990f9;
+    text-decoration: none;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+.jops-page__add-btn {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+}
+
+.jops-page__filtr {
+    width: 100%;
+    top: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    background-color: #eaeaea;
+    align-items: center;
+}
+
+.jops-page__filtr span {
+    margin-right: 15px;
+    margin-left: 45px;
+}
+
+.jops-page__filtr input {
+    width: 100px;
+    height: 31px;
+    border-radius: 11px;
+    border: solid 1px #979797;
+    margin: 16px 0 13px;
+}
+
+@media (max-width: 470px) {
+    .jops-page__filtr input{
+        width: 72px;
+    }
+
+    .jops-page__filtr span {
+        margin-right: 15px;
+        margin-left: 35px;
+    }
 }

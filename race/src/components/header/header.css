@@ -18,6 +18,7 @@
 .header__navigation  ul {
   padding: 0;
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   gap: 45px;
 }
@@ -38,4 +39,8 @@
   line-height: normal;
   letter-spacing: normal;
   text-align: center;
+}
+
+.active {
+  border-bottom: solid 2px #ffffff
 }

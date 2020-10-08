@@ -1,0 +1,41 @@
+.info {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.info-container {
+    width: 43%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: SFUIText, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+}
+
+.info-container h3{
+    display: flex;
+    margin: 0;
+    margin-bottom: 15px;
+    color: #7ed321;
+    font-family: SFUIText, sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+}
+
+@media (max-width: 530px) {
+    .info-container {
+        width: 90%;
+        justify-content: flex-start;
+    }
+}

@@ -1,9 +1,48 @@
 .jog-info {
     display: flex;
+    min-width: 225px;
+    position: relative;
 }
 
 .jog-info__data {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.jog-info img {
+    margin-right: 45px;
+}
+
+.jog-info__data span{
+    font-family: SFUIText, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+.jog-info__data span:nth-child(1) {
+    font-weight: normal;
+}
+
+.jog-info__value {
+    font-weight: normal; 
+}
+
+@media (max-width: 478px) {
+    .jog-info {
+        padding-bottom: 45px;
+    }
+
+    .jog-info::after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background-color: rgb(215, 215, 215);
+        position: absolute;
+        bottom: 0;
+    }
 }

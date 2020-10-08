@@ -4,6 +4,8 @@ import { useHttp } from '../../hooks/http.hook'
 
 import './auth-page.css';
 import icon from './bear-face.svg';
+import iconBear from './bearFace.png';
+
 import { AuthContext } from '../../context/AuthContext';
 
 const AuthPage = () => {
@@ -28,6 +30,7 @@ const AuthPage = () => {
             <div className="container auth-page__container">
                 <div className="auth-page__login-container">
                     <img src={icon} alt="Bear icon" className="login-container__icon" />
+                    <img src={iconBear} alt="Bear icon" className="login-container__icon_small" />
                     <button
                         type="button"
                         className="login-container__btn"

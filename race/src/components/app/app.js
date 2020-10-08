@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { useRoutes } from '../../routes';
 import Header from '../header';
@@ -10,9 +10,10 @@ import { useAuth } from '../../hooks/auth.hook';
 import { AuthContext } from '../../context/AuthContext';
 
 function App() {
+  const [filter, activateFilter] = useState(false);
   const { token, login, ready } = useAuth();
   const isAuthenticated = !!token;
-  const routes = useRoutes(isAuthenticated);
+  const routes = useRoutes(isAuthenticated, filter);
 
   if (!ready) {
     return <Loader />
@@ -23,7 +24,7 @@ function App() {
       token, login, isAuthenticated
     }}>
       <Router>
-        <Header></Header>
+        <Header activateFilter = {activateFilter} filter = {filter}></Header>
         <div className="app">
           {routes}
         </div>

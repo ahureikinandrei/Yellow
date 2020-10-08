@@ -5,7 +5,6 @@ import './contact-us.css';
 const ContactUs = () => {
     return (
         <div >
-            hi
         </div>
     );
 };

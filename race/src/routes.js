@@ -6,12 +6,12 @@ import ContactUs from './components/contact-us';
 import AuthPage from './components/auth-page';
 import JogsCreatePage from './components/jogs-create-page/jogs-create-page';
 
-export const useRoutes = isAuthenticated => {
+export const useRoutes = (isAuthenticated, filter) => {
     if (isAuthenticated) {
         return (
             <Switch>
                 <Route path="/jogs">
-                    <JogsPage />
+                    <JogsPage filter = {filter}/>
                 </Route>
                 <Route path="/info">
                     <InfoPage />

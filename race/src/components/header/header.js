@@ -1,11 +1,18 @@
 import React, { useContext } from 'react';
+import { NavLink, Route } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthContext';
 
 import './header.css';
 import icon from './logo.svg';
-import { NavLink } from 'react-router-dom';
-import { AuthContext } from '../../context/AuthContext';
+import filterIco from './filter.svg';
+import filterIcoActive from './filter-active.svg';
 
-const Header = () => {
+const Header = ({ activateFilter, filter }) => {
+
+  const filterBtn = (<li>
+    <img src={filter ? filterIcoActive : filterIco} alt="Filter icon" onClick={() => activateFilter(!filter)} />
+  </li>);
+
 
   const { token } = useContext(AuthContext);
   let navigation = (
@@ -20,9 +27,7 @@ const Header = () => {
         <li>
           <NavLink to="/contacts">CONTACT US</NavLink>
         </li>
-        <li>
-          <NavLink to="/jog-create-page">create</NavLink>
-        </li>
+        <Route path="/jogs" render={() => filterBtn} />
       </ul>
     </nav>)
 

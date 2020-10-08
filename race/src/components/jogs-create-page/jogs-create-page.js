@@ -4,6 +4,8 @@ import './jogs-create-page.css';
 import { useHttp } from '../../hooks/http.hook';
 import { AuthContext } from '../../context/AuthContext';
 import { useHistory } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import cancel from './cancel.svg';
 
 const JogsCreatePage = () => {
     const history = useHistory();
@@ -18,7 +20,7 @@ const JogsCreatePage = () => {
     const setJog = async () => {
         try {
             if (distance && date && time) {
-                await request(httpRequst, 'POST', 'date=15.08.2019&time=45&distance=50', { Authorization: `Bearer ${token}` });
+                await request(httpRequst, 'POST', `date=${date}&time=${time}&distance=${distance}`, { Authorization: `Bearer ${token}` });
                 setDistance('');
                 setDate('');
                 setTime('');
@@ -32,23 +34,31 @@ const JogsCreatePage = () => {
         <div className="jops-create">
             <div className="container jops-create__container">
                 <div className="jops-create__create">
-                    <input type="text"
-                        placeholder="distance"
-                        onChange={e => setDistance(e.target.value)}
-                        value={distance}></input>
-                    <input type="text"
-                        placeholder="date"
-                        onChange={e => setDate(e.target.value)}
-                        value={date}></input>
-                    <input type="text"
-                        placeholder="calories"
-                        onChange={e => setTime(e.target.value)}
-                        value={time}></input>
+                    <NavLink to="/jogs" className="jops-create__exit"><img src={cancel} alt="Jog icon" /></NavLink>
+                    <div className="jops-create__info">
+                        <span>Distance</span>
+                        <input type="text"
+                            onChange={e => setDistance(e.target.value)}
+                            value={distance}></input>
+                    </div>
+                    <div className="jops-create__info">
+                        <span>Time</span>
+                        <input type="text"
+                            onChange={e => setDate(e.target.value)}
+                            value={date}>
+                        </input>
+                    </div>
+                    <div className="jops-create__info">
+                        <span>Date</span>
+                        <input type="text"
+                            onChange={e => setTime(e.target.value)}
+                            value={time}></input>
+                    </div>
                     <button
                         type="button"
-                        className="login-container__btn"
+                        className="jogs__create__btn"
                         onClick={setJog}>
-                        Let me in
+                        Save
                     </button>
                 </div>
             </div>

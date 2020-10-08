@@ -26,7 +26,7 @@
 }
 
 .login-container__btn {
-    margin-top: 56px;
+    margin-top: 41px;
     width: 151px;
     height: 60px;
     border-radius: 36px;
@@ -47,3 +47,26 @@
     cursor: pointer;
     outline: none;
 }
+
+.login-container__icon_small{
+    display: none;
+}
+
+@media (max-width: 650px) {
+    .auth-page__login-container {
+        background-color: #ffffff;
+    }
+
+    .login-container__btn {
+        border: solid 3px #e990f9;
+        color: #e990f9;
+    }
+
+    .login-container__icon {
+        display: none;
+    }
+
+    .login-container__icon_small {
+        display: block;
+    }
+  }

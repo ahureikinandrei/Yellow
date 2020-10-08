@@ -11,12 +11,55 @@
 }
 
 .jops-create__create {
+    position: relative;
+    padding-top: 100px;
     width: 35%;
-    height: 379px;
     border-radius: 44px;
-    background-color: #e990f9;
+    background-color: #7ed321;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-bottom: 46px;
+    gap: 25px;
+}
+
+.jops-create__create input{
+    height: 31px;
+    border-radius: 7px;
+    border: solid 1px #979797;
+}
+
+.jops-create__info span{
+    display: inline-block;
+    width: 74px;
+}
+
+.jops-create__exit {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}
+
+.jogs__create__btn {
+    margin-top: 41px;
+    width: 151px;
+    height: 60px;
+    border-radius: 36px;
+    border: solid 3px #ffffff;
+    font-family: SFUIText, sans-serif;
+    color: #ffffff;
+    background:transparent;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+@media (max-width: 857px) {
+    .jops-create__create {
+        width: 90%;
+    }
 }
