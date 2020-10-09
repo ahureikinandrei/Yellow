@@ -45,56 +45,8 @@
   border-bottom: solid 2px #ffffff
 }
 
-.side-manu {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 40px;
-  width: 100vw;
-  height: 100%;
-  background-color: #ffffff;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-}
-
-.side-manu a {
-  list-style-type: none;
-  text-decoration: none;
-  white-space: nowrap;
-  color: black;
-  font-family: SFUIText, sans-serif;
-  font-size: 24px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: center;
-}
-
-.side-manu a.active {
-  color: #7ed321;
-}
-
 .humburger {
   display: none;
-}
-
-.side-manu__logo {
-  position: absolute;
-  top: 5%;
-  left: 10%;
-}
-
-.side-manu__cancel {
-  position: absolute;
-  top: 5%;
-  right: 10%;
-  width: 21px;
-  height: 21px;
 }
 
 @media (max-width: 478px) { 

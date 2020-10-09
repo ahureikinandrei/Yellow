@@ -2,13 +2,14 @@ import React, { useContext, useState } from 'react';
 import { NavLink, Route } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
 
+import SideMenu from '../side-meny'
+
 import './header.css';
 import icon from './logo.svg';
 import filterIco from './filter.svg';
 import filterIcoActive from './filter-active.svg';
 import humburgerIco from './menu.png';
-import bearSide from './BearSide.png';
-import cancel from './cancel.svg';
+
 
 const Header = ({ activateFilter, filter }) => {
   const [humburger, activateHumburger] = useState(false)
@@ -39,22 +40,12 @@ const Header = ({ activateFilter, filter }) => {
 
   const navigationVie = !!token ? navigation : null;
 
-  const sideMenu = (
-    <div className="side-manu">
-      <img src={bearSide} alt="Filter icon" className="side-manu__logo" />
-      <img src={cancel} alt="Cansel icon" className="side-manu__cancel" onClick={() => activateHumburger(false)} />
-      <NavLink to="/jogs" onClick={() => activateHumburger(false)}>JOGS</NavLink>
-      <NavLink to="/info" onClick={() => activateHumburger(false)}>INFO</NavLink>
-      <NavLink to="/contacts" onClick={() => activateHumburger(false)}>CONTACT US</NavLink>
-    </div>
-  )
-
   return (
     <div className="header">
       <div className="container header__container">
         <img src={icon} alt="Bear icon" />
         {navigationVie}
-        {humburger ? sideMenu : null}
+        {humburger ? <SideMenu activateHumburger={activateHumburger} /> : null}
       </div>
     </div>
   );
