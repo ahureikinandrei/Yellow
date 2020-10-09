@@ -20,7 +20,7 @@ const JogsCreatePage = () => {
     const setJog = async () => {
         try {
             if (distance && date && time) {
-                await request(httpRequst, 'POST', `date=${date}&time=${time}&distance=${distance}`, { Authorization: `Bearer ${token}` });
+                await request(httpRequst, 'POST', `date=(1000.0, 1000, 3, '2020-10-09 05:44:04', '2020-10-09 05:44:04')&time=${time}&distance=${distance}`, { Authorization: `Bearer ${token}` });
                 setDistance('');
                 setDate('');
                 setTime('');
@@ -67,3 +67,5 @@ const JogsCreatePage = () => {
 };
 
 export default JogsCreatePage;
+
+module.export = {JogsCreatePage};
