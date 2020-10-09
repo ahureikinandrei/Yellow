@@ -4,7 +4,6 @@ import icon from './icon.svg';
 import './jog-info.css';
 
 const JogInfo = ({ jog, filterFrom, filterTo }) => {
-    console.log(jog);
     const jogsinfo = jog.response.jogs.map((jog) => {
         return (
             <div className="jog-info" key={jog.id} date={jog.date}>

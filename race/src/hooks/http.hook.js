@@ -10,7 +10,6 @@ export const useHttp = () => {
             if (body) {
                 headers['Content-Type'] = 'application/x-www-form-urlencoded';
                 headers['Accept'] = 'application/json';
-                console.log(headers);
             }
 
             const response = await fetch(url, { method, body, headers });
